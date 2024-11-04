@@ -15,7 +15,7 @@ En el primer nivel, simplemente tenemos que listar un archivo con el nombre `-`.
 --------------------
 ### Password: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
 
-![[Pasted image 20241017024606.png]]
+![](./ANEXOS/Pasted%20image%2020241017024606.png)
 
 En el segundo nivel simplemente usando el tabulador nos autocompletara el nombre con espacios.
 
@@ -27,7 +27,7 @@ En el segundo nivel simplemente usando el tabulador nos autocompletara el nombre
 --------------------
 ### Password: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
 
-![[Pasted image 20241017024758.png]]
+![](./ANEXOS/Pasted%20image%2020241017024758.png)
 
 En este caso, la contraseña estaba en un archivo oculto y, simplemente con usar `ls -la` o `ll`, veríamos el archivo y podríamos mostrarlo en la terminal.
 
@@ -38,7 +38,7 @@ En este caso, la contraseña estaba en un archivo oculto y, simplemente con usar
 --------------------
 ### Password: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
 
-![[Pasted image 20241017113523.png]]
+![](./ANEXOS/Pasted%20image%2020241017113523.png)
 
 En este caso, vemos que hay muchos archivos, pero solo uno es legible para humanos. Para encontrar el archivo correcto, usamos `find . | xargs file`.
 
@@ -50,7 +50,7 @@ En este caso, vemos que hay muchos archivos, pero solo uno es legible para human
 --------------------
 ### Password: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 
-![[Pasted image 20241017113849.png]]
+![](./ANEXOS/Pasted%20image%2020241017113849.png)
 
 En este caso, la contraseña para el siguiente nivel está almacenada en un archivo ubicado en algún lugar dentro del directorio **inhere** y tiene todas las siguientes propiedades:
 
@@ -80,7 +80,7 @@ find . -type f ! -executable -size 1033c | xargs cat | xargs
 --------------------
 ### Password: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 
-![[Pasted image 20241017114204.png]]
+![](./ANEXOS/Pasted%20image%2020241017114204.png)
 
 La contraseña para el siguiente nivel se almacena en algún lugar del servidor y tiene todas las propiedades siguientes: 
 
@@ -112,7 +112,7 @@ find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null | xargs cat
 --------------------
 ### Password: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 
-![[Pasted image 20241017114718.png]]
+![](./ANEXOS/Pasted%20image%2020241017114718.png)
 
 La contraseña para el siguiente nivel se almacena en el archivo data.txt junto a la palabra `millioth`
 
@@ -124,7 +124,7 @@ Para ello usamos `grep` para buscar esa cadena en el archivo data.txt
 --------------------
 ### Password: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
 
-![[Pasted image 20241017115111.png]]
+![](./ANEXOS/Pasted%20image%2020241017115111.png)
 
 La contraseña está en el archivo `data.txt`, que contiene varias líneas de texto. Debes encontrar una línea que contenga solo un valor único.
 
@@ -146,7 +146,7 @@ cat data.txt | sort | uniq -u
 --------------------
 ### Password: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 
-![[Pasted image 20241017115323.png]]
+![](./ANEXOS/Pasted%20image%2020241017115323.png)
 
 En este nivel se hace exactamente igual que el anterior usando el comando `grep` pero buscando una cadena con el símbolo  ` = `
 
@@ -157,7 +157,7 @@ En este nivel se hace exactamente igual que el anterior usando el comando `grep`
 -----------------
 ### Password: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 
-![[Pasted image 20241017115458.png]]
+![](./ANEXOS/Pasted%20image%2020241017115458.png)
 
 La contraseña para el siguiente nivel se almacena en el archivo data.txt, que contiene datos codificados en base64 para ello usamos el comando `base64` y el parámetro `-d` para decodificar el archivo
 
@@ -167,7 +167,7 @@ La contraseña para el siguiente nivel se almacena en el archivo data.txt, que c
 ----------------
 ### Password: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
 
-![[Pasted image 20241017131210.png]]
+![](./ANEXOS/Pasted%20image%2020241017131210.png)
 
 
 La contraseña para el siguiente nivel se almacena en el archivo data.txt, donde todas las letras minúsculas (a-z) y mayúsculas (A-Z) se han rotado 13 posiciones, en este caso he usado la pagina web https://rot13.com/ para averiguar la contraseña
@@ -203,7 +203,7 @@ while [ $decompressed_file_name ]; do
 done 
 ```
 
-![[Pasted image 20241017171916.png]]
+![](./ANEXOS/Pasted%20image%2020241017171916.png)
 
 La contraseña para el siguiente nivel se almacena en el archivo data.txt, que es un hexdump de un archivo que ha sido comprimido repetidamente. Para este nivel habría que primero revertir el volcado de hexdump con `xxd` y el parámetro `-r` en un archivo `.bin`.
 
@@ -218,7 +218,7 @@ He creado un `.sh` para automatizar la descompresión de un archivo varias veces
 ---------------------
 ### Password: MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
 
-![[Pasted image 20241017183545.png]]
+![](./ANEXOS/Pasted%20image%2020241017183545.png)
 
 La contraseña para el siguiente nivel se almacena en /etc/bandit_pass/bandit14 y sólo puede ser leída por el usuario bandit14. Como vemos nos dan una clave privada llamada sshkey.private con la cual con `ssh` y el parámetro `-i` podemos pasarle clave privada y nos conectaríamos con bandit14
 
@@ -229,7 +229,7 @@ La contraseña para el siguiente nivel se almacena en /etc/bandit_pass/bandit14 
 --------------------
 ### Password: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
 
-![[Pasted image 20241018143306.png]]
+![](./ANEXOS/Pasted%20image%2020241018143306.png)
 
 La contraseña para el siguiente nivel se puede recuperar enviando la contraseña del nivel actual al puerto 30000 en localhost, para ello usando `nc` y apuntando al puerto que espera la respuesta que en este caso seria la maquina localhost y por el puerto 30000, añadiendo la contraseña de bandit14 nos devolvería la nueva contraseña
 
@@ -241,7 +241,7 @@ La contraseña para el siguiente nivel se puede recuperar enviando la contraseñ
 
 ncat --ssl localhost 30001
 
-![[Pasted image 20241018144933.png]]
+![](./ANEXOS/Pasted%20image%2020241018144933.png)
 
 La contraseña para el siguiente nivel se puede recuperar enviando la contraseña del nivel actual al puerto 30001 en localhost utilizando encriptación SSL/TLS.
 
@@ -262,7 +262,7 @@ for port in $(< ports); do
     echo "kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx" | timeout 2 bash -c "ncat --ssl localhost $port"
 done
 ```
-![[Pasted image 20241021185131.png]]
+![](./ANEXOS/Pasted%20image%2020241021185131.png)
 
 Las credenciales para el siguiente nivel se pueden recuperar enviando la contraseña del nivel actual a un puerto en localhost en el rango 31000 a 32000. Primero averigua cuáles de estos puertos tienen un servidor escuchando en ellos. Luego averigua cuáles de ellos hablan SSL/TLS y cuáles no. Sólo hay 1 servidor que dará las siguientes credenciales, los demás simplemente te devolverán lo que le envíes.
 
@@ -279,7 +279,7 @@ Una vez ejecutas ese script en un directorio temporal creado con `mktemp -d` nos
 ### Password: x2gLTTjFwMOhQ8oWNbMN362QKxfRqGlO
 
 
-![[Pasted image 20241021190218.png]]
+![](./ANEXOS/Pasted%20image%2020241021190218.png)
 
 Hay 2 archivos en el directorio principal: `passwords.old` y `passwords.new`. La contraseña para el siguiente nivel está en passwords.new y es la única línea que ha cambiado entre passwords.old y passwords.new.
 
@@ -291,7 +291,7 @@ Con el comando diff podemos comparar archivos y mostrar las diferencias entre el
 --------------------
 ### Password: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
 
-![[Pasted image 20241021190850.png]]
+![](./ANEXOS/Pasted%20image%2020241021190850.png)
 
 La contraseña para el siguiente nivel se almacena en un archivo llamado `readme` en el directorio home. Desafortunadamente, alguien ha modificado el archivo `.bashrc` para cerrar la sesión automáticamente al conectarse por SSH.
 
@@ -304,7 +304,7 @@ Para solucionar este problema, podemos forzar la asignación de un pseudo-termin
 --------------------
 ### Password: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
 
-![[Pasted image 20241021191739.png]]
+![](./ANEXOS/Pasted%20image%2020241021191739.png)
 
 Para acceder al siguiente nivel, debes utilizar el binario **setuid** en el directorio de inicio. Ejecútalo sin argumentos para saber cómo usarlo. La contraseña para este nivel se puede encontrar en el lugar habitual (/etc/bandit_pass), después de haber utilizado el binario **setuid**.
 
@@ -316,7 +316,7 @@ En este caso, se nos proporciona un binario que nos permite ejecutar comandos co
 --------------------
 ### Password: EeoULMCra2q0dSkYj561DX7s1CpBuOBt
 
-![[Pasted image 20241021192426.png]]
+![](./ANEXOS/Pasted%20image%2020241021192426.png)
 
 Hay un binario **setuid** en el directorio home que realiza las siguientes funciones: establece una conexión con `localhost` en el puerto que especifiques como argumento en la línea de comandos. Luego, lee una línea de texto de la conexión y la compara con la contraseña del nivel anterior (bandit20). Si la contraseña es correcta, transmitirá la contraseña del siguiente nivel (bandit21).
 
@@ -334,7 +334,7 @@ Al ejecutar el primer comando, enviamos la contraseña del nivel anterior al pue
 --------------------
 ### Password: tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
 
-![[Pasted image 20241021192932.png]]
+![](./ANEXOS/Pasted%20image%2020241021192932.png)
 
 Un programa se está ejecutando automáticamente a intervalos regulares a través de **cron**, el programador de trabajos basado en el tiempo. Debemos buscar en `/etc/cron.d/` la configuración y observar qué comando se está ejecutando.
 
@@ -346,7 +346,7 @@ En este caso, veremos que esta tarea de cron está enviando la contraseña de **
 --------------------
 ### Password: 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
 
-![[Pasted image 20241021193403.png]]
+![](./ANEXOS/Pasted%20image%2020241021193403.png)
 
 Un programa se está ejecutando automáticamente a intervalos regulares a través de **cron**, el programador de trabajos basado en el tiempo. Debemos buscar en `/etc/cron.d/` la configuración y observar qué comando se está ejecutando.
 
@@ -360,9 +360,9 @@ Este proceso nos permitirá identificar y recuperar la contraseña con facilidad
 --------------------
 ### Password: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
 
-![[Pasted image 20241029111440.png]]
+![](./ANEXOS/Pasted%20image%2020241029111440.png)
 
-![[Pasted image 20241023133548.png]]
+![](./ANEXOS/Pasted%20image%2020241023133548.png)
 
 Un programa se está ejecutando automáticamente a intervalos regulares a través de cron, el programador de trabajos basado en el tiempo. Para identificar qué comando se está ejecutando, revisamos la configuración en el directorio `/etc/cron.d/`.
 
@@ -394,7 +394,7 @@ Siguiendo estos pasos, el trabajo cron ejecutará tu script como `bandit24`, y p
 
 ### Password: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
 
-![[Pasted image 20241024140230.png]]
+![](./ANEXOS/Pasted%20image%2020241024140230.png)
 
 En este nivel, un demonio está escuchando en el puerto 30002. Para obtener la contraseña de `bandit25`, necesitas enviarle dos cosas: la contraseña de `bandit24` y un código PIN secreto de 4 dígitos. La única forma de encontrar este PIN es mediante fuerza bruta, es decir, probando todas las 10,000 combinaciones posibles. No es necesario crear una nueva conexión para cada intento.
 
@@ -430,13 +430,13 @@ Este enfoque permitirá iterar sobre todas las combinaciones generadas sin inter
 ### Password: s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ > 26
 ### Password: upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB > 27
 
-![[Pasted image 20241029124110.png]]
+![](./ANEXOS/Pasted%20image%2020241029124110.png)
 
-![[Pasted image 20241024164557.png]]
+![](./ANEXOS/Pasted%20image%2020241024164557.png)
 
-![[Pasted image 20241024164745.png]]
+![](./ANEXOS/Pasted%20image%2020241024164745.png)
 
-![[Pasted image 20241027214417.png]]
+![](./ANEXOS/Pasted%20image%2020241027214417.png)
 
 Para acceder al nivel 27 desde bandit25, necesitaremos entender cómo funciona el shell asignado a `bandit26`. En lugar de `/bin/bash`, el shell asignado es `/usr/bin/showtext`, que ejecuta el siguiente script:
 
@@ -472,7 +472,7 @@ Este procedimiento permite acceder directamente al nivel 27 tras obtener la cont
 --------------------
 ### Password: Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
 
-![[Pasted image 20241027220347.png]]
+![](./ANEXOS/Pasted%20image%2020241027220347.png)
 
 En este nivel, existe un repositorio Git disponible en `ssh://bandit27-git@localhost/home/bandit27-git/repo`, accesible a través del puerto `2220`. La contraseña para el usuario `bandit27-git` es la misma que la de `bandit27`.
 
@@ -497,7 +497,7 @@ cat README
 --------------------
 ### Password: 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7
 
-![[Pasted image 20241027220729.png]]
+![](./ANEXOS/Pasted%20image%2020241027220729.png)
 
 En este nivel, tenemos acceso a un repositorio Git ubicado en `ssh://bandit28-git@localhost/home/bandit28-git/repo` a través del puerto `2220`. La contraseña para el usuario `bandit28-git` es la misma que la de `bandit28`.
 
@@ -523,7 +523,7 @@ Al obtener la contraseña de esta manera, podremos avanzar al siguiente nivel.
 --------------------
 ### Password: qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL
 
-![[Pasted image 20241027221243.png]]
+![](./ANEXOS/Pasted%20image%2020241027221243.png)
 
 En este nivel, tenemos acceso a un repositorio Git en `ssh://bandit29-git@localhost/home/bandit29-git/repo`, a través del puerto `2220`. La contraseña para `bandit29-git` es la misma que para el usuario `bandit29`.
 
@@ -558,7 +558,7 @@ Esta serie de pasos nos lleva a descubrir la contraseña oculta en una rama dife
 --------------------
 ### Password: fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy
 
-![[Pasted image 20241027221752.png]]
+![](./ANEXOS/Pasted%20image%2020241027221752.png)
 
 En este nivel, accedemos a un repositorio Git ubicado en `ssh://bandit30-git@localhost/home/bandit30-git/repo` a través del puerto `2220`, utilizando la misma contraseña que para el usuario `bandit30`.
 
@@ -599,7 +599,7 @@ Esta estrategia nos permite descubrir la contraseña oculta en una etiqueta espe
 --------------------
 ### Password: 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K
 
-![[Pasted image 20241027222323.png]]
+![](./ANEXOS/Pasted%20image%2020241027222323.png)
 
 En este nivel, accedemos a un repositorio Git ubicado en `ssh://bandit31-git@localhost/home/bandit31-git/repo` a través del puerto `2220`, utilizando la misma contraseña que para el usuario `bandit31`.
 
@@ -656,7 +656,7 @@ Este proceso nos permite completar la tarea de manera efectiva y obtener acceso 
 **Nivel 32 > 33**
 --------------------
 
-![[Pasted image 20241027223740.png]]
+![](./ANEXOS/Pasted%20image%2020241027223740.png)
 
 En este último nivel, te encuentras en una shell conocida como la **UPPERCASE SHELL**, donde cualquier texto que escribas se convierte automáticamente en mayúsculas, y parece que las variables de entorno como `$HOME` o `$SHELL` se encuentran disponibles para su consulta. Esto nos da una pista sobre la naturaleza de esta shell especial.
 
