@@ -4,7 +4,7 @@
 --------------------
 ### Password: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 
-![](./ANEXOS/Pasted image 20241017024452.png)
+![](./ANEXOS/Pasted%20image%2020241017024452.png)
 
 En el primer nivel, simplemente tenemos que listar un archivo con el nombre `-`. En este caso, lo podemos hacer haciendo un `cat` de la ruta absoluta o utilizando este comando: `cat $(pwd)/-`
 
